@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Scam:</strong>
+  <%= @result %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @scam.title %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @scam.email %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @scam.text %>
+</p>
+
+<%= link_to 'Edit', edit_scam_path(@scam) %> |
+<%= link_to 'Back', scams_path %>
