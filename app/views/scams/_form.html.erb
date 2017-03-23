@@ -12,18 +12,21 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :sender %><br>
+    <%= f.text_field :sender %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
-    <%= f.label :sender %><br>
-    <%= f.text_field :email %>
+    <%= f.label :messsage %><br>
+    <%= f.text_field :messsage %>
   </div>
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Analyse' %>
   </div>
 <% end %>

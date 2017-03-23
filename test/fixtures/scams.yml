@@ -2,10 +2,12 @@
 
 one:
   title: MyString
-  email: MyString
-  text: MyString
+  sender: MyString
+  messsage: MyString
+  result: MyString
 
 two:
   title: MyString
-  email: MyString
-  text: MyString
+  sender: MyString
+  messsage: MyString
+  result: MyString

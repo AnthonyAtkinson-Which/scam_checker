@@ -24,14 +24,12 @@ class ScamsController < ApplicationController
   # POST /scams
   # POST /scams.json
   def create
-    binding.pry
-    @result = SCAM_CHECKER.classify scam_params.values.join(' ')
-
     @scam = Scam.new(scam_params)
+    @scam.result = SCAM_CHECKER.classify scam_params.values.join(' ')
 
     respond_to do |format|
       if @scam.save
-        format.html { redirect_to @scam, notice: 'Scam was successfully created.' }
+        format.html { redirect_to @scam, notice: 'Analysis complete' }
         format.json { render :show, status: :created, location: @scam }
       else
         format.html { render :new }
@@ -72,6 +70,6 @@ class ScamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scam_params
-      params.require(:scam).permit(:title, :email, :text)
+      params.require(:scam).permit(:title, :sender, :messsage, :result)
     end
 end

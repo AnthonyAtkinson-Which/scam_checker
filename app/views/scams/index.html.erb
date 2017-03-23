@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Scams</h1>
+<h1>Listing Checked Scams</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Email</th>
-      <th>Text</th>
+      <th>Sender</th>
+      <th>Messsage</th>
+      <th>Result</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +17,11 @@
     <% @scams.each do |scam| %>
       <tr>
         <td><%= scam.title %></td>
-        <td><%= scam.email %></td>
-        <td><%= scam.text %></td>
+        <td><%= scam.sender %></td>
+        <td><%= scam.messsage %></td>
+        <td><%= scam.result %></td>
+        <td><%= link_to 'Confirm Scam', scam %></td>
+        <td><%= link_to 'Confirm Legit', scam %></td>
         <td><%= link_to 'Show', scam %></td>
         <td><%= link_to 'Edit', edit_scam_path(scam) %></td>
         <td><%= link_to 'Destroy', scam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +32,10 @@
 
 <br>
 
-<%= link_to 'New Scam', new_scam_path %>
+<h2>Scam Word Index</h2>
+
+<p>
+  Here you can see the common word stubs that are indicative of scam messages.
+</p>
+
+<%= SCAM_CHECKER.scam %>

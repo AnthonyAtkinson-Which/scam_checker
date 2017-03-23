@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323091610) do
+ActiveRecord::Schema.define(version: 20170323095053) do
 
   create_table "scams", force: :cascade do |t|
     t.string   "title"
-    t.string   "email"
-    t.string   "text"
+    t.string   "sender"
+    t.string   "messsage"
+    t.string   "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

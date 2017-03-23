@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<p class='results'>
+  <strong>Result:</strong>
+  <% if @scam.result == 'Non-scam' %>
+    <%= "We've check the message for you and it appears to be trust worthy. We can't make any guarantees though so we always advise caution when responding to suspicious messages." %>
+  <% else %>
+    <%= "This message has some features that suggest it could be a scam." %>
+  <% end %>
+</p>
+
 <p>
-  <strong>Scam:</strong>
-  <%= @result %>
+  Here is the message you entered.
 </p>
 
 <p>
@@ -11,14 +19,14 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @scam.email %>
+  <strong>Sender:</strong>
+  <%= @scam.sender %>
 </p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @scam.text %>
+  <strong>Messsage:</strong>
+  <%= @scam.messsage %>
 </p>
 
-<%= link_to 'Edit', edit_scam_path(@scam) %> |
-<%= link_to 'Back', scams_path %>
+<%= link_to 'Edit this message', edit_scam_path(@scam) %> |
+<%= link_to 'Analyse another message', new_scam_path %>

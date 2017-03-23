@@ -18,7 +18,7 @@ class ScamsControllerTest < ActionController::TestCase
 
   test "should create scam" do
     assert_difference('Scam.count') do
-      post :create, scam: { email: @scam.email, text: @scam.text, title: @scam.title }
+      post :create, scam: { messsage: @scam.messsage, result: @scam.result, sender: @scam.sender, title: @scam.title }
     end
 
     assert_redirected_to scam_path(assigns(:scam))
@@ -35,7 +35,7 @@ class ScamsControllerTest < ActionController::TestCase
   end
 
   test "should update scam" do
-    patch :update, id: @scam, scam: { email: @scam.email, text: @scam.text, title: @scam.title }
+    patch :update, id: @scam, scam: { messsage: @scam.messsage, result: @scam.result, sender: @scam.sender, title: @scam.title }
     assert_redirected_to scam_path(assigns(:scam))
   end
 
