@@ -43,6 +43,8 @@ class ScamsController < ApplicationController
   # PATCH/PUT /scams/1
   # PATCH/PUT /scams/1.json
   def update
+    @scam.result = SCAM_CHECKER.classify scam_params.values.join(' ')
+
     respond_to do |format|
       if @scam.update(scam_params)
         format.html { redirect_to @scam, notice: 'Scam was successfully updated.' }

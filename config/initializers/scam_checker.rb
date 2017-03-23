@@ -4,7 +4,7 @@ SCAM_CHECKER = ClassifierReborn::Bayes.new 'Non-scam', 'Scam'
 SCAM_CHECKER.train 'scam', 'This stay at home mum earns $700 and hour! YOU COULD TO! find out how.'
 SCAM_CHECKER.train 'scam', 'You WON you have won the jackpot click here to claim'
 SCAM_CHECKER.train 'scam', 'You have inherrited a fortune from a distant relative'
-SCAM_CHECKER.train 'scam', 'Claim your free vouchers today! just clikc this link'
+SCAM_CHECKER.train 'scam', 'Claim your free vouchers today! just click this link'
 SCAM_CHECKER.train 'scam', 'You bank details may be at risk! please enter your password here to update your security settings!'
 SCAM_CHECKER.train 'scam', 'youre the winner of the amazing prize! you WON claim your prize now'
 
