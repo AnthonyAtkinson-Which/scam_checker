@@ -35,7 +35,7 @@
 <h2>Scam Word Index</h2>
 
 <p>
-  Here you can see the common word stubs that are indicative of scam messages.
+  Here you can see the frequencies of word stems found in scam messages. A higher count indicates that the word is often contained in scam messages.
 </p>
 
-<%= SCAM_CHECKER.scam %>
+<%= SCAM_CHECKER.instance_variable_get('@categories')[:Scam] %>

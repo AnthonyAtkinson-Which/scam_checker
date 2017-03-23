@@ -25,7 +25,9 @@ class ScamsController < ApplicationController
   # POST /scams.json
   def create
     @scam = Scam.new(scam_params)
+
     @scam.result = SCAM_CHECKER.classify scam_params.values.join(' ')
+    # @scam.result = SCAM_CHECKER.classify_with_score scam_params.values.join(' ')
 
     respond_to do |format|
       if @scam.save
